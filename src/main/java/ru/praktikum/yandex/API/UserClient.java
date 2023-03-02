@@ -5,6 +5,7 @@ import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import ru.praktikum.yandex.model.User;
+
 import static io.restassured.RestAssured.given;
 
 public class UserClient extends StellarBurgerClient {
@@ -117,7 +118,6 @@ public class UserClient extends StellarBurgerClient {
                 .when()
                 .post("/api/auth/logout");
     }*/
-
 
 
 }

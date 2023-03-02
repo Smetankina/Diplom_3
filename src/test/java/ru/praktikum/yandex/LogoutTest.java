@@ -13,7 +13,7 @@ import ru.praktikum.yandex.POM.LoginPageClass;
 import ru.praktikum.yandex.POM.ProfilePageClass;
 import ru.praktikum.yandex.model.User;
 
-public class LogoutTest extends TestBase{
+public class LogoutTest extends TestBase {
 
     UserClient userClient = new UserClient();
     User user = new User(
@@ -36,6 +36,7 @@ public class LogoutTest extends TestBase{
                 .clickLoginButton();
 
     }
+
     @After
     public void teardown() {
 
@@ -54,7 +55,7 @@ public class LogoutTest extends TestBase{
     @Description("Check Logout Button ProfilePage")
     @DisplayName("Check Logout Button ProfilePage")
     @Test
-    public void checkLogoutButtonTest(){
+    public void checkLogoutButtonTest() {
 
 
         new HomePageClass(driver)
@@ -65,8 +66,8 @@ public class LogoutTest extends TestBase{
                 .clickPersonalAreaButton();
 
 
-      LoginPageClass loginPageClass = new LoginPageClass(driver);
-      Assert.assertTrue("If you don't see this button you in Personal Area and you didnt Logout", loginPageClass.loginButtonDisplayed());
+        LoginPageClass loginPageClass = new LoginPageClass(driver);
+        Assert.assertTrue("If you don't see this button you in Personal Area and you didnt Logout", loginPageClass.loginButtonDisplayed());
 
     }
 }

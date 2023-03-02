@@ -19,6 +19,7 @@ public class HomePageClass {
         driver.get("https://stellarburgers.nomoreparties.site");
         return this;
     }
+
     //кнопка Личный кабинет
     private By personalAreaButton = By.xpath(".//p[(@class ='AppHeader_header__linkText__3q_va ml-2' and text()='Личный Кабинет')]");
     //кнопка Войти в аккаунт
@@ -40,7 +41,6 @@ public class HomePageClass {
     private By fillingList = By.xpath(".//h2[@class = 'text text_type_main-medium mb-6 mt-10' and text() ='Начинки']");
 
 
-
     //метод для клика по кнопке Личный кабинет
     public HomePageClass clickPersonalAreaButton() {
         driver.findElement(personalAreaButton).click();
@@ -54,26 +54,27 @@ public class HomePageClass {
     }
 
     //buns title is Displayed
-    public boolean bunsTitleIsDisplayed(){
-     return    driver.findElement(bunsTitle).isDisplayed();
+    public boolean bunsTitleIsDisplayed() {
+        return driver.findElement(bunsTitle).isDisplayed();
     }
 
     //click on bunsTab
-    public HomePageClass clickOnBunsTab(){
+    public HomePageClass clickOnBunsTab() {
         driver.findElement(bunsTab).click();
-    return this;
-    }
-    //click on SauceTab
-    public HomePageClass clickOnSauceTab(){
-        driver.findElement(sauceTab).click();
-    return this;
-    }
-    //click on FillingTab
-    public HomePageClass clickOnFillingTab(){
-        driver.findElement(fillingTab).click();
         return this;
     }
 
+    //click on SauceTab
+    public HomePageClass clickOnSauceTab() {
+        driver.findElement(sauceTab).click();
+        return this;
+    }
+
+    //click on FillingTab
+    public HomePageClass clickOnFillingTab() {
+        driver.findElement(fillingTab).click();
+        return this;
+    }
 
 
     public HomePageClass scrollToSauceList() {
@@ -81,11 +82,13 @@ public class HomePageClass {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
         return this;
     }
+
     public HomePageClass scrollToBunList() {
         WebElement element = driver.findElement(bunsList);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
         return this;
     }
+
     public HomePageClass scrollToFillingList() {
         WebElement element = driver.findElement(fillingList);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);

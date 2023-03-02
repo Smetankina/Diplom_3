@@ -16,13 +16,13 @@ import static org.junit.Assert.assertTrue;
 public class RegisterFieldsValidationTest extends TestBase {
 
 
-
     private String password = RandomStringUtils.random(5, true, false);
-    private  String email = RandomStringUtils.random(10, true, true) + "@yandex.ru";
-    private  String name = RandomStringUtils.random(10, true, false);
+    private String email = RandomStringUtils.random(10, true, true) + "@yandex.ru";
+    private String name = RandomStringUtils.random(10, true, false);
 
-    User user = new User(email,password,name);
+    User user = new User(email, password, name);
     UserClient userClient = new UserClient();
+
     @After
     public void teardown() {
         //удаляем пользователя после теста

@@ -28,7 +28,6 @@ public class RegisterTest extends TestBase {
     }
 
     UserClient userClient = new UserClient();
-
     // Тестовые данные
     @Parameterized.Parameters
     public static Object[][] registerTestData() {

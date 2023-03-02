@@ -11,7 +11,6 @@ public class ProfilePageClass {
     }
 
 
-
     //field Name
     private By fieldName = By.xpath(".//label[text()='Имя']/following::input[1]");
     //field Login
@@ -28,25 +27,27 @@ public class ProfilePageClass {
     }
 
 
-    public ProfilePageClass clickLogoutButton(){
+    public ProfilePageClass clickLogoutButton() {
         driver.findElement(logoutButton).click();
         return this;
     }
-    public ProfilePageClass clickStellarBurgerLogo(){
+
+    public ProfilePageClass clickStellarBurgerLogo() {
         driver.findElement(stellarBurgerLogo).click();
         return this;
     }
 
 
-    public boolean logoutButtonIsDisplayed(){
-       return driver.findElement(logoutButton).isDisplayed();
+    public boolean logoutButtonIsDisplayed() {
+        return driver.findElement(logoutButton).isDisplayed();
 
 
     }
+
     //click on ConstructorButton
-    public ProfilePageClass clickConstructorButton(){
+    public ProfilePageClass clickConstructorButton() {
         driver.findElement(constructorButton).click();
-        return  this;
+        return this;
     }
 
 

@@ -44,7 +44,6 @@ public class LoginTest extends TestBase {
         driver.quit();
     }
 
-
     @DisplayName("вход по кнопке «Войти в аккаунт» на главной")
     @Description("вход по кнопке «Войти в аккаунт» на главной,")
     @Test

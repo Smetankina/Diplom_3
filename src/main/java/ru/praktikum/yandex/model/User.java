@@ -9,7 +9,6 @@ public class User {
     private String accessToken;
     private String refreshToken;
 
-
     public User(String email, String password, String name) {
         this.email = email;
         this.password = password;

@@ -8,7 +8,6 @@ public class RegisterPageClass {
     WebDriver driver;
 
 
-
     public RegisterPageClass(WebDriver driver) {
         this.driver = driver;
     }
@@ -69,7 +68,7 @@ public class RegisterPageClass {
     //error Display
 
     public boolean errorIsDisplayed() {
-      return   driver.findElement(errorDisplay).isDisplayed();
+        return driver.findElement(errorDisplay).isDisplayed();
 
     }
 }

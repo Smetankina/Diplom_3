@@ -11,7 +11,6 @@ import java.util.concurrent.TimeUnit;
 public class TestBase {
 
 
-
     public WebDriver driver;
 
 
@@ -24,7 +23,7 @@ public class TestBase {
         options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
 
-       //driver = new ChromeDriver();
+        //driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
 
         //для запуска Yandex.Browser

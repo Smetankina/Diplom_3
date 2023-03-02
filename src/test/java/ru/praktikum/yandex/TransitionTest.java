@@ -21,7 +21,6 @@ public class TransitionTest extends TestBase {
             RandomStringUtils.random(7, true, true),
             RandomStringUtils.random(10, true, false));
 
-
     @Before
 
     public void createUser() {

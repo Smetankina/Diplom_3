@@ -13,6 +13,7 @@ public class LoginPageClass {
         driver.get("https://stellarburgers.nomoreparties.site/login");
         return this;
     }
+
     //Personal Area Button
     private By personalAreaButton = By.xpath(".//p[@class ='AppHeader_header__linkText__3q_va ml-2' and text()='Личный Кабинет']");
     //Input field Email
@@ -32,7 +33,7 @@ public class LoginPageClass {
 
 
     //Click Personal Area Button
-    public LoginPageClass clickPersonalAreaButton(){
+    public LoginPageClass clickPersonalAreaButton() {
         driver.findElement(personalAreaButton).click();
         return this;
     }
@@ -71,7 +72,6 @@ public class LoginPageClass {
     public boolean loginButtonDisplayed() {
         return driver.findElement(loginButton).isDisplayed();
     }
-
 
 
 }
