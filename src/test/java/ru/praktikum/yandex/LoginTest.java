@@ -38,8 +38,7 @@ public class LoginTest extends TestBase {
             userClient.deleteUser(user);
             System.out.println("User deleted after Test");
         } catch (NullPointerException e) {
-            System.out.println("Nothing to delete");
-
+          user = null;
         }
         driver.quit();
     }

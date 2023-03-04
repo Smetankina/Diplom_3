@@ -30,14 +30,14 @@ public class RegisterFieldsValidationTest extends TestBase {
             userClient.deleteUser(user);
             System.out.println("User deleted after Test");
         } catch (NullPointerException e) {
-            System.out.println("Nothing to delete");
+            user = null;
 
         }
         driver.quit();
     }
 
     @DisplayName("After unsuccessful input in the fields error message  is  Displayed")
-    @Description("After successful input in the fields error message  is Not Displayed")
+    @Description("After unsuccessful input in the fields error message  is  Displayed")
     @Test
     public void errorDisplayTest() {
         new HomePageClass(driver)
@@ -55,8 +55,7 @@ public class RegisterFieldsValidationTest extends TestBase {
 
         RegisterPageClass registerPageClass = new RegisterPageClass(driver);
         boolean isErrorDisplayed = registerPageClass.errorIsDisplayed();
-        assertTrue("Smth is wrong with error display" +
-                ".", isErrorDisplayed);
+        assertTrue("Smth is wrong with error display", isErrorDisplayed);
 
     }
 

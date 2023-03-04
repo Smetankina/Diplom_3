@@ -68,27 +68,14 @@ public class RegisterTest extends TestBase {
         userClient.loginUser(user).then().assertThat().body("success", equalTo(isSuccess));
 
 
-/*
-СПРОСИТЬ
-
-как правильно сделать такой тест. у меня в негативе в isDisabled возвращался NPE/
-        LoginPageClass loginPageClass = new LoginPageClass(driver);
-        boolean isDisplayed = loginPageClass.loginButtonDisplayed();
-        assertTrue("Пользователь не зарегистрирован", isDisplayed);
-*/
-
     }
 
     @After
     public void teardown() {
         //удаляем пользователя после теста
-        try {
+        if (user!=null){
             userClient.deleteUser(user);
-            System.out.println("User deleted after Test");
-        } catch (NullPointerException e) {
-            System.out.println("Nothing to delete");
-
-        }
+                  }
         driver.quit();
     }
 

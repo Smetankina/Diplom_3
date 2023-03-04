@@ -2,6 +2,7 @@ package ru.praktikum.yandex;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
@@ -9,7 +10,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import ru.praktikum.yandex.POM.HomePageClass;
 
 public class ConstructorTest extends TestBase {
-
+@After
+public void tearDown(){
+    driver.quit();
+}
     @Description("Check Scroll to Sauce List")
     @DisplayName("Check Scroll to Sauce List")
     @Test
@@ -22,8 +26,8 @@ public class ConstructorTest extends TestBase {
                 .clickOnSauceTab(); //жмакаю на соусы, вижу, что скролл идет
         // нагуглила, что window.pageYOffset; - это на сколько прокрутился скролл по вертикали
         Object actualScrollPosition = executor.executeScript("return window.pageYOffset;");
-    /*  driver.quit();
-      driver = new ChromeDriver(options);*/
+
+
         JavascriptExecutor executor2 = (JavascriptExecutor) driver;
         new HomePageClass(driver)
                 .openPage()
@@ -47,8 +51,8 @@ public class ConstructorTest extends TestBase {
                 .clickOnFillingTab();
 
         Object actualScrollPosition = executor.executeScript("return window.pageYOffset;");
-/*      driver.quit();
-      driver = new ChromeDriver();*/
+      driver.quit();
+
         JavascriptExecutor executor2 = (JavascriptExecutor) driver;
         new HomePageClass(driver)
                 .openPage()
@@ -72,8 +76,8 @@ public class ConstructorTest extends TestBase {
                 .clickOnBunsTab();
 
         Object actualScrollPosition = executor.executeScript("return window.pageYOffset;");
-/*      driver.quit();
-      driver = new ChromeDriver();*/
+
+
         JavascriptExecutor executor2 = (JavascriptExecutor) driver;
         new HomePageClass(driver)
                 .openPage()
@@ -82,6 +86,6 @@ public class ConstructorTest extends TestBase {
 
         Object expectedScrollPosition = executor2.executeScript("return window.pageYOffset;");
 
-        Assert.assertEquals("Sauce bytton scroll to different position then SauceList", expectedScrollPosition, actualScrollPosition);
+        Assert.assertEquals("Sauce button scroll to different position then SauceList", expectedScrollPosition, actualScrollPosition);
     }
 }

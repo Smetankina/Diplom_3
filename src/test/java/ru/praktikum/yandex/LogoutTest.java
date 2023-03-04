@@ -48,7 +48,7 @@ public class LogoutTest extends TestBase {
             System.out.println("Nothing to delete");
 
         }
-        //   driver.quit();
+          driver.quit();
     }
 
 
