@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 public class HomePageClass {
 
-    private WebDriver driver;
+     WebDriver driver;
 
     //конструктор для класса страницы
     public HomePageClass(WebDriver driver) {

@@ -37,14 +37,10 @@ public class TransitionTest extends TestBase {
     }
 
     @After
-    public void teardown() {
-
-        try {
+    public void tearDown() {
+        //удаляем пользователя после теста
+        if (user.getAccessToken() != null){
             userClient.deleteUser(user);
-            System.out.println("User deleted after Test");
-        } catch (NullPointerException e) {
-            user = null;
-
         }
         driver.quit();
     }

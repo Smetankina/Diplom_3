@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ru.praktikum.yandex.POM.HomePageClass;
+//по конструктору непонятно. через консоль запускаю, билд успешный https://ibb.co/MSx8gWc а через Идею - через раз падают тесты на скролл
 
 public class ConstructorTest extends TestBase {
 @After
@@ -26,7 +27,6 @@ public void tearDown(){
                 .clickOnSauceTab(); //жмакаю на соусы, вижу, что скролл идет
         // нагуглила, что window.pageYOffset; - это на сколько прокрутился скролл по вертикали
         Object actualScrollPosition = executor.executeScript("return window.pageYOffset;");
-
 
         JavascriptExecutor executor2 = (JavascriptExecutor) driver;
         new HomePageClass(driver)
@@ -51,21 +51,21 @@ public void tearDown(){
                 .clickOnFillingTab();
 
         Object actualScrollPosition = executor.executeScript("return window.pageYOffset;");
-      driver.quit();
+
 
         JavascriptExecutor executor2 = (JavascriptExecutor) driver;
         new HomePageClass(driver)
                 .openPage()
                 .scrollToBunList()//здесь я скролю окно к единой начальной точке
-                .scrollToFillingList(); //ожидаемый скролл к соусам
+                .scrollToFillingList(); //ожидаемый скролл к filling
 
         Object expectedScrollPosition = executor2.executeScript("return window.pageYOffset;");
 
-        Assert.assertEquals("Sauce bytton scroll to different position then SauceList", expectedScrollPosition, actualScrollPosition);
+        Assert.assertEquals("Sauce button scroll to different position then FillingList", expectedScrollPosition, actualScrollPosition);
     }
 
-    @Description("Check Scroll to Filling List")
-    @DisplayName("Check Scroll to Filling List")
+    @Description("Check Scroll to Buns List")
+    @DisplayName("Check Scroll to Buns List")
     @Test
     public void checkScrollToBunListTest() {
 
@@ -86,6 +86,6 @@ public void tearDown(){
 
         Object expectedScrollPosition = executor2.executeScript("return window.pageYOffset;");
 
-        Assert.assertEquals("Sauce button scroll to different position then SauceList", expectedScrollPosition, actualScrollPosition);
+        Assert.assertEquals("Sauce button scroll to different position then Bun", expectedScrollPosition, actualScrollPosition);
     }
 }

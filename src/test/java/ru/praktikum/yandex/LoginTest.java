@@ -32,13 +32,10 @@ public class LoginTest extends TestBase {
     }
 
     @After
-    public void teardown() {
+    public void tearDown() {
         //удаляем пользователя после теста
-        try {
+        if (user.getAccessToken() != null){
             userClient.deleteUser(user);
-            System.out.println("User deleted after Test");
-        } catch (NullPointerException e) {
-          user = null;
         }
         driver.quit();
     }

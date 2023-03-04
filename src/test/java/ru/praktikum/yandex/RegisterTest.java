@@ -73,7 +73,7 @@ public class RegisterTest extends TestBase {
     @After
     public void teardown() {
         //удаляем пользователя после теста
-        if (user!=null){
+        if (user.getAccessToken() != null){
             userClient.deleteUser(user);
                   }
         driver.quit();
