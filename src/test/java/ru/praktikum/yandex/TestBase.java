@@ -19,22 +19,25 @@ public class TestBase {
     public void setDriverChrome() {
 
         //Chrome
-        ChromeOptions options = new ChromeOptions();
+      /*  ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
 
         //driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);*/
 
         //для запуска Yandex.Browser
 
-        /*ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
-        options.setBinary("C:/Users/Smetankina.A.A/AppData/Local/Yandex/YandexBrowser/Application.browser.exe");
-        options.setBinary("C:/WebDriver/bin/yandexdriver.exe");
-        driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);*/
+
+
+     //   System.setProperty("webdriver.chrome.driver","C:/Users/Smetankina.A.A/AppData/Local/Yandex/YandexBrowser/Application.browser.exe");
+       // options.setBinary("C:/WebDriver/bin/yandexdriver.exe");
+       // System.setProperty("webdriver.chrome.driver","C:/WebDriver/bin/yandexdriver.exe");
+
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
 
     }
+
 
 }
